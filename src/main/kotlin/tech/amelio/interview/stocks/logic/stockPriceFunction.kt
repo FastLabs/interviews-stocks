@@ -1,6 +1,7 @@
 package tech.amelio.interview.stocks.logic
 
 import kotlin.math.max
+import kotlin.random.Random
 import kotlin.random.Random.Default.nextInt
 
 /**
@@ -9,6 +10,6 @@ import kotlin.random.Random.Default.nextInt
  * Simulates a very expensive computational process by blocking the thread during 0.8 seconds
  */
 fun getNextStockPrice(name: String, value: Long): Long {
-    Thread.sleep(800)
+    Thread.sleep(Random.nextInt(1000).toLong())
     return max(1, value + nextInt(-10, 11))
 }
